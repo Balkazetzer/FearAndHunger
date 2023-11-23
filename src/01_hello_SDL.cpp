@@ -3,12 +3,12 @@ and may not be redistributed without written permission.*/
 
 //Using SDL and standard IO
 #pragma once
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <stdio.h>
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 840;
+const int SCREEN_HEIGHT = 680;
 
 int main( int argc, char* args[] )
 {
