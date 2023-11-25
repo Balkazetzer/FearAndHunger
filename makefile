@@ -12,7 +12,7 @@ tutorial0 : src/*
 	g++ src/02_getting_an_image_on_the_screen.cpp -IC:\msys64\mingw64\include\SDL2 -LC:\MinGW\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -o bin/tutorial1
 
 fearnhunger : src/* 
-	g++ src/main.cpp -I include/* -IC:\msys64\mingw64\include\SDL2 -lSDL_image -LC:\MinGW\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -o bin/fearandhunger
+	g++ src/main.cpp -I include/* -IC:\msys64\mingw64\include\SDL2 -LC:\MinGW\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o bin/fearandhunger
 
 
 all : fearnhunger
@@ -27,4 +27,4 @@ runFNH:
 	./bin/fearandhunger
 
 clear:
-	del bin\fearandhunger.exe
+	del bin/fearandhunger.exe

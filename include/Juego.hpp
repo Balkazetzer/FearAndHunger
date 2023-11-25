@@ -1,12 +1,14 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include "Ventana.hpp"
+#include "Nivel.hpp"
 
 #include "../include/Entradas.hpp"
 class Juego
 {
 private:
-    /* data */
+    Nivel _nivel;
+    Ventana ventana;
 public:
     Juego(/* args */);
     ~Juego();
@@ -22,7 +24,7 @@ namespace
     const int MAX_FRAME_TIME = 5 * 1000 / FPS;
 }
 
-Juego::Juego()
+Juego::Juego() : ventana(), _nivel("map1", Vector2(100, 100), ventana)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
     this->loop();
@@ -30,38 +32,39 @@ Juego::Juego()
 
 void Juego::loop()
 {
-    Ventana ventana;
     Entradas entrada;
     SDL_Event evento;
+
+    this->_nivel = Nivel("map1", Vector2(100,100), ventana);
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
     while (true)
     {
         entrada.ActualizarFrame();
-        if (SDL_PollEvent(&evento))
+        while (SDL_PollEvent(&evento))
         {
             if (evento.type == SDL_KEYUP)
             {
                 entrada.IrArriba(evento);
             }
-            if (evento.type == SDL_KEYDOWN)
+            else if (evento.type == SDL_KEYDOWN)
             {
                 entrada.IrAbajo(evento);
             }
-            if (evento.type == SDLK_LEFT)
+            else if (evento.key.keysym.sym == SDLK_LEFT)
             {
                 entrada.IrIzquierda(evento);
             }
-            if (evento.type == SDLK_RIGHT)
+            else if (evento.key.keysym.sym == SDLK_RIGHT)
             {
                 entrada.IrDerecha(evento);
             }
-            if (evento.type == SDL_QUIT)
+            else if (evento.type == SDL_QUIT)
             {
                 return;
             }
-            if (entrada.TeclaPresionada(SDL_SCANCODE_ESCAPE) == true)
+            else if (entrada.TeclaPresionada(SDL_SCANCODE_ESCAPE) == true)
             {
                 return;
             }
@@ -76,8 +79,10 @@ void Juego::loop()
 
 void Juego::dibujar(Ventana &ventana)
 {
+    this->_nivel.Dibujar(ventana);
 }
 
 void Juego::actualizar(float lapso)
 {
+    this->_nivel.ActualizarMapa(lapso);
 }
