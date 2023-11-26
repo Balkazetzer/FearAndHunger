@@ -1,9 +1,13 @@
+#ifndef JUEGO_HPP
+#define JUEGO_HPP
+
 #pragma once
 #include <SDL2/SDL.h>
 #include "Ventana.hpp"
 #include "Nivel.hpp"
 
 #include "../include/Entradas.hpp"
+
 class Juego
 {
 private:
@@ -24,18 +28,19 @@ namespace
     const int MAX_FRAME_TIME = 5 * 1000 / FPS;
 }
 
-Juego::Juego() : ventana(), _nivel("map1", Vector2(100, 100), ventana)
+Juego::Juego() : _nivel("", Vector2(0, 0), ventana)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
     this->loop();
 }
+
 
 void Juego::loop()
 {
     Entradas entrada;
     SDL_Event evento;
 
-    this->_nivel = Nivel("map1", Vector2(100,100), ventana);
+    this->_nivel = Nivel("map1", Vector2(480,640), ventana);
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
 
@@ -86,3 +91,5 @@ void Juego::actualizar(float lapso)
 {
     this->_nivel.ActualizarMapa(lapso);
 }
+
+#endif

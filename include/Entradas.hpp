@@ -1,3 +1,6 @@
+#ifndef ENTRADAS_HPP
+#define ENTRADAS_HPP
+
 #pragma once
 #include <SDL2/SDL.h>
 #include <map>
@@ -75,3 +78,5 @@ bool Entradas::TeclaLiberada(SDL_Scancode key){
 bool Entradas::TeclaSostenida(SDL_Scancode key){
     return this->_heldKeys[key];
 }
+
+#endif

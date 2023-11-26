@@ -1,3 +1,6 @@
+#ifndef GLOBALES_HPP
+#define GLOBALES_HPP
+
 #pragma once
 
 #include <SDL2/SDL.h>
@@ -8,7 +11,7 @@ namespace globales{
     const int ALTURA_VENTANA = 480;
     const int ANCHO_VENTANA = 640;
 
-    const float ESCALA_SPRIDE = 2.0f;
+    const float ESCALA_SPRITE = 2.0f;
 }
 
 struct Vector2{
@@ -24,3 +27,5 @@ struct Vector2{
     }
 
 };
+
+#endif

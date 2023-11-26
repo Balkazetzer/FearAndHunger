@@ -1,0 +1,53 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "mapa 1.xml",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "mapa 1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mapa 1.xml": {
+            "scale": 0.72140625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 318.82174572233055,
+                "y": 400.60645440762397
+            }
+        },
+        "mapa 1.xml#!doorway1": {
+            "scaleInDock": 1
+        },
+        "mapa 1.xml#!floor_1": {
+            "scaleInDock": 1
+        },
+        "mapa 1.xml#SacrificialCircle1AMap": {
+            "scaleInDock": 1
+        },
+        "mapa 1.xml#SacrificialCircle1AMap (1)": {
+            "scaleInDock": 1
+        }
+    },
+    "last.externalTilesetPath": "C:/Users/Lenovo/OneDrive/Documentos/Escuela/LIZETTE/UNI/3Er Semestre/PROGRAMACIÓN AVANZADA/FearandHunger/assets/tilesets",
+    "last.imagePath": "C:/Users/Lenovo/OneDrive/Documentos/Escuela/LIZETTE/UNI/3Er Semestre/PROGRAMACIÓN AVANZADA/FearandHunger/assets/backgrounds",
+    "map.height": 16,
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.width": 20,
+    "openFiles": [
+        "mapa 1.xml"
+    ],
+    "project": "sin nombre.tiled-project",
+    "recentFiles": [
+        "mapa 1.xml",
+        "mapa 1.tsx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFilter": "Archivos de conjuntos de patrones Tiled (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx"
+}

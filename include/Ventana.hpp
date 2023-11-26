@@ -1,3 +1,6 @@
+#ifndef VENTANAS_HPP
+#define VENTANAS_HPP
+
 #pragma once
 #include <SDL2/SDL.h>
 #include <stdio.h>
@@ -79,3 +82,5 @@ SDL_Renderer *Ventana ::GetRenderer() const
 {
     return this->mainSuperficie;
 }
+
+#endif
