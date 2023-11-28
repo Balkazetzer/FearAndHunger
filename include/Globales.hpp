@@ -14,6 +14,34 @@ namespace globales{
     const float ESCALA_SPRITE = 2.0f;
 }
 
+enum Direccion
+{
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN
+};
+
+namespace lados{
+    enum Lado{
+        ARRIBA,
+        ABAJO,
+        IZQUIERDO,
+        DERECHO,
+        NINGUNO
+    };
+
+    const inline Lado ladoOpuesto (Lado lado) {
+        return
+            lado == ARRIBA ? ABAJO :
+            lado == ABAJO ? ARRIBA :
+            lado == IZQUIERDO ? DERECHO :
+            lado == DERECHO ? IZQUIERDO :
+            ARRIBA;
+    }
+
+}
+
 struct Vector2{
     int x, y;
     Vector2():

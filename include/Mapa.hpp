@@ -4,7 +4,7 @@
 
 class Mapa
 {
-private:
+protected:
     /* data */
 public:
     Mapa(/* args */);

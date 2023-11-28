@@ -8,7 +8,7 @@ using namespace std;
 
 class Entradas
 {
-private:
+protected:
     map<SDL_Scancode, bool> _heldKeys;
     map<SDL_Scancode, bool> _pressedKeys;
     map<SDL_Scancode, bool> _releasedKeys;

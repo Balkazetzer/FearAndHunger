@@ -11,7 +11,7 @@
 
 class Recuadros
 {
-private:
+protected:
     SDL_Texture *recSet;
     Vector2 _tamanyoRecuadro;
     Vector2 _posicionRecuadro;
