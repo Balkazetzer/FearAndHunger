@@ -1,17 +1,19 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
-#include "../include/Juego.hpp"
-#include"../include/Entradas.hpp"
+#include "../include/Juego.h"
+#include "../include/Entradas.h"
+#include <crtdbg.h>
 
+int WinMain(int argc, char *argv[])
+{
 
-int SDL_main(int argv, char** args) {
-
+    (void)argc;
     Juego juego;
     while (true)
     {
         /* code */
     }
-            
-    
+
+    _CrtDumpMemoryLeaks();
     return 0;
-} 
+}

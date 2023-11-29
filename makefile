@@ -1,27 +1,13 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = src/01_hello_SDL.cpp
-
+OBJS = $(wildcard src/*.cpp)
 #OBJ_NAME specifies the name of our exectuable
-OBJ_NAME = bin/01_hello_SDL
+OBJ_NAME = bin/fearandhunger
 
 #This is the target that compiles our executable
-tutorial1 : src/*
-	g++ src/01_hello_SDL.cpp -I include/* -IC:\msys64\mingw64\include\SDL2 -LC:\MinGW\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -o bin/fearandhunger
+fearandhunger : $(OBJS) 
+	g++ -std=c++17 -g $(OBJS) -I include -I/mingw64/include/SDL2 -L/mingw64/lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o $(OBJ_NAME)
 
-tutorial0 : src/*
-	g++ src/02_getting_an_image_on_the_screen.cpp -IC:\msys64\mingw64\include\SDL2 -LC:\MinGW\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -o bin/tutorial1
+all : fearandhunger
 
-fearnhunger : src/* 
-	g++ src/main.cpp -I include/* -IC:\msys64\mingw64\include\SDL2 -LC:\msys64\mingw64\lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o bin/fearandhunger
-
-
-all : fearnhunger
-
-runT0: 
-	./bin/tutorial0
-
-runT1: 
-	./bin/tutorial1
-
-runFNH:
-	./bin/fearandhunger
+run: fearandhunger
+	$(OBJ_NAME)
